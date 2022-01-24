@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #c5e4e7;
+}
+
+.logo {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+main {
+  background: white;
+  padding: 1.4rem;
+  border-radius: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  cursor: default;
+}
+
+.left-side {
+  padding: 0.65rem;
+  margin-right: 0.65rem;
+}
+
+h4 {
+  font-size: 0.7rem;
+  color: #5e7a7d;
+}
+
+.buttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (6.25rem)[3];
+      grid-template-columns: repeat(3, 6.25rem);
+  gap: 0.65rem;
+  margin-block: 30px;
+}
+
+.buttons h4 {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+}
+
+.buttons button {
+  font-family: "Space Mono", monospace;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.3rem;
+  background: #00494d;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  height: 2.1rem;
+}
+
+.buttons .custom {
+  background: #f4fafa;
+  color: #5e7a7d;
+  border: 2px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buttons .custom input[type="number"] {
+  text-align: center;
+  background: #f4fafa;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.9rem;
+  border-radius: 0.3rem;
+  background: #f4fafa;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  outline: none;
+  border: none;
+  text-align: right;
+  font-family: "Space Mono", monospace;
+  width: 100%;
+  background: #f4fafa;
+  font-size: 1.2rem;
+  color: #00494d;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.error-span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#error {
+  color: red;
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.right-side {
+  margin-left: 0.6rem;
+  background: #00494d;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.2rem;
+  position: relative;
+}
+
+.tip-result-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1.2rem;
+}
+
+.total h5 {
+  color: white;
+}
+
+.total h6 {
+  color: #7f9c9f;
+}
+
+.result {
+  color: #26c0ab;
+  font-size: 2rem;
+}
+
+#reset-btn {
+  position: absolute;
+  margin: auto;
+  bottom: 1.2rem;
+  left: 0;
+  right: 0;
+  width: calc(100% - 2.4rem);
+  border: none;
+  padding: 0.62rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: "Space Mono", monospace;
+  color: #00494d;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  background: #26c0ab;
+}
+
+.active {
+  background: #26c0ab !important;
+  color: #00494d !important;
+}
+
+.customActive {
+  background: white !important;
+  border: 2px solid #26c0ab !important;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media (max-width: 375px) {
+  main {
+    -ms-grid-columns: 300px;
+        grid-template-columns: 300px;
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
+  main .buttons {
+    -ms-grid-columns: (33%)[3];
+        grid-template-columns: repeat(3, 33%);
+  }
+}
+/*# sourceMappingURL=style.css.map */

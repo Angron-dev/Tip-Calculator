@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -18,7 +16,7 @@
         <div class="bill-conatiner">
           <h4>Bill</h4>
           <label>
-            <img src="images/icon-dollar.svg" alt="dolar" />
+            <span class="currency__sign">zł</span>
             <input type="number" placeholder="0" id="bill-input" />
           </label>
         </div>
@@ -53,7 +51,7 @@
             <h5>Tip Amount</h5>
             <h6>/ person</h6>
           </span>
-          <h2 class="result" id="tip-result">$0.00</h2>
+          <h2 class="result sign__container" id="tip-result">zł 0.00</h2>
         </div>
 
         <div class="tip-result-container">
@@ -61,12 +59,31 @@
             <h5>Total</h5>
             <h6>/ person</h6>
           </span>
-          <h2 class="result" id="total-result">$0.00</h2>
+          <h2 class="result sign__container" id="total-result">zł 0.00</h2>
         </div>
-        <div class="exchange-rates">
-          <select name="exchange-rates"></select>
+        <div class="currency">
+          <span class="tooltip" data-tooltip="Tip Amount in a foreign currency">?</span>
+          <select name="currency" class="currency__select">
+            <option value="PLN" selected>Polish zloty</option>
+            <option value="EUR">Euro</option>
+            <option value="USD">U.S. Dollar</option>
+            <option value="GBP">Pound Sterling</option>
+            <option value="UAH">Hryvna (Ukraine)</option>
+            <option value="HUF">Forint</option>
+            <option value="ILS">Israeli Shekel</option>
+            <option value="CHF">Swiss Franc</option>
+            <option value="NOK">Norwegian Krone</option>
+          </select>
+
+          <div class="tip-result-container sign__container">
+            <div class="total">
+              <h5>Total</h5>
+              <h6>/ person</h6>
+            </div>
+            <h2 class="result sign__container" id="foreign-currency">zł 0.00</h2>
+          </div>
         </div>
-        <button id="reset-btn">Reset</button>
+        <button class="reset-btn disabled" value="reset" disabled>Reset</button>
       </div>
     </main>
     <script src="script.js"></script>

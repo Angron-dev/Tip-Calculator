@@ -6,29 +6,20 @@ $breakpoint: 375px;
   padding: 0;
   box-shadow: none;
 }
-:root {
-  --body-bg: hsl(185, 41%, 84%);
-  --calc-bg: hsl(189, 41%, 97%);
-  --dark-cyan: hsl(183, 100%, 15%);
-  --text-light-bg: hsl(186, 14%, 43%);
-  --text-dark-bg: hsl(184, 14%, 56%);
-  --strong-cyan: hsl(172, 67%, 45%);
-  --white: white;
-}
 body {
   font-family: "Space Mono", monospace;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: var(--body-bg);
+  background: $lightGrayishCyan;
 }
 .logo {
   margin-bottom: 3rem;
   margin-top: 3rem;
 }
 main {
-  background: var(--white);
+  background: white;
   padding: 1.4rem;
   border-radius: 1rem;
   display: grid;
@@ -39,20 +30,16 @@ main {
 .left-side {
   padding: 0.65rem;
   margin-right: 0.65rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
 }
 h4 {
   font-size: 0.7rem;
-  color: var(--text-light-bg);
+  color: $darkGrayishCyan;
 }
 .buttons {
   display: grid;
   grid-template-columns: repeat(3, 6.25rem);
   gap: 0.65rem;
-  margin: 30px 0;
+  margin-block: 30px;
   h4 {
     grid-column: 1/4;
   }
@@ -61,22 +48,22 @@ h4 {
     border: none;
     padding: 0.45rem 0.9rem;
     border-radius: 0.3rem;
-    background: var(--dark-cyan);
-    color: var(--white);
+    background: $veryDarkCyan;
+    color: white;
     font-weight: 700;
     cursor: pointer;
     height: 2.1rem;
   }
   .custom {
-    background: var(--calc-bg);
-    color: var(--text-light-bg);
-    border: 2px solid var(--white);
+    background: $lightGrayishCyan2;
+    color: $darkGrayishCyan;
+    border: 2px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
     input[type="number"] {
       text-align: center;
-      background: var(--calc-bg);
+      background: $lightGrayishCyan2;
       width: 100%;
       font-size: 0.9rem;
     }
@@ -87,123 +74,19 @@ label {
   align-items: center;
   padding: 0.9rem;
   border-radius: 0.3rem;
-  background: var(--calc-bg);
+  background: $lightGrayishCyan2;
   cursor: pointer;
-}
-.currency {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  height: 100px;
-  margin: 2rem 0 4rem 0;
-  &__select {
-    padding: 5px;
-    border: 2px solid var(--strong-cyan);
-    border-radius: 10px;
-    width: 60%;
-    display: block;
-    outline: none;
-    background-color: var(--dark-cyan);
-    color: var(--white);
-    font-family: "Space Mono", monospace;
-    font-weight: 500;
-    font-size: 1rem;
-    option {
-      background: var(--dark-cyan);
-      font-weight: 500;
-    }
-  }
-  &__title {
-    color: var(--strong-cyan);
-    margin-bottom: 0.5rem;
-  }
-  &__exchange-rate {
-    color: var(--strong-cyan);
-    font-weight: 700;
-    font-size: 1.5rem;
-    &__sign {
-      font-size: 2rem;
-    }
-  }
-}
-.sign__container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-}
-.currency__sign {
-  margin-right: 10px;
-  font-size: 1.2rem;
-  color: var(--text-light-bg);
 }
 
-option:disabled {
-  color: var(--text-dark-bg);
-}
-.currency__select {
-  padding: 5px;
-  border: 2px solid var(--strong-cyan);
-  border-radius: 10px;
-  width: 65%;
-  display: block;
-  outline: none;
-  background-color: var(--dark-cyan);
-  color: var(--white);
-  font-family: "Space Mono", monospace;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
-  option {
-    background: hsl(186, 14%, 43%);
-  }
-}
-.tooltip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-end;
-  margin-right: 1rem;
-  border-radius: 50%;
-  height: 1.5rem;
-  width: 1.5rem;
-  background: var(--strong-cyan);
-  color: var(--dark-cyan);
-  position: relative;
-  cursor: help;
-  &::after {
-    transition: 0.3s;
-    visibility: hidden;
-    white-space: nowrap;
-    content: attr(data-tooltip);
-    border-radius: 10px;
-    font-size: 0.8rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: auto;
-    top: calc(-150% - 3px);
-    padding: 0.5rem;
-    background: var(--strong-cyan);
-    color: var(--dark-cyan);
-    text-transform: capitalize;
-  }
-  &:hover::after {
-    visibility: visible;
-  }
-}
 input[type="number"] {
-  direction: rtl;
   outline: none;
   border: none;
   text-align: right;
   font-family: "Space Mono", monospace;
   width: 100%;
-  background: var(--calc-bg);
+  background: $lightGrayishCyan2;
   font-size: 1.2rem;
-  color: var(--dark-cyan);
+  color: $veryDarkCyan;
   font-weight: 700;
   cursor: pointer;
 }
@@ -223,7 +106,7 @@ input::-webkit-inner-spin-button {
 }
 .right-side {
   margin-left: 0.6rem;
-  background: var(--dark-cyan);
+  background: $veryDarkCyan;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -238,20 +121,18 @@ input::-webkit-inner-spin-button {
 }
 .total {
   h5 {
-    color: var(--white);
-    white-space: nowrap;
+    color: white;
   }
   h6 {
-    white-space: nowrap;
-    color: var(--text-dark-bg);
+    color: $darkGrayishCyan2;
   }
 }
 .result {
-  color: var(--strong-cyan);
+  color: $strongCyan;
   font-size: 2rem;
 }
-.reset-btn {
-  position: static;
+#reset-btn {
+  position: absolute;
   margin: auto;
   bottom: 1.2rem;
   left: 0;
@@ -262,28 +143,20 @@ input::-webkit-inner-spin-button {
   text-transform: uppercase;
   font-size: 1.1rem;
   font-family: "Space Mono", monospace;
-  color: var(--dark-cyan);
+  color: $veryDarkCyan;
   font-weight: 700;
   cursor: pointer;
   border-radius: 0.3rem;
-  background: var(--strong-cyan);
+  background: $strongCyan;
 }
-
-.disabled {
-  background: hsl(183, 100%, 12%) !important ;
-  cursor: default;
+.active {
+  background: $strongCyan !important;
+  color: $veryDarkCyan !important;
 }
-.buttons {
-  .active {
-    background: var(--strong-cyan);
-    color: var(--dark-cyan);
-  }
-  .customActive {
-    background: var(--white);
-    border: 2px solid var(--strong-cyan);
-  }
+.customActive {
+  background: white !important;
+  border: 2px solid $strongCyan !important;
 }
-
 .attribution {
   font-size: 11px;
   text-align: center;
